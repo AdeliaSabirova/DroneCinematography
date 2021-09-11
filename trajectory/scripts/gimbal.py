@@ -8,6 +8,7 @@ from geometry_msgs.msg import Vector3, Vector3Stamped
 import rospy
 import std_msgs.msg
 from dji_sdk.msg import Gimbal
+from mav_planning_msgs.msg import PolynomialTrajectory
 
 
 def gimbal():
@@ -19,8 +20,8 @@ def gimbal():
 	gimbal.header.stamp = rospy.Time.now()
 	gimbal.header.frame_id = 'frame'
 	i = 0
-	drone = open("/home/robotic/catkin_ws/src/dji_adelia/Data.txt","r")
-	camera = open("/home/robotic/catkin_ws/src/dji_adelia/Camera.txt","r")
+	drone = open("/home/robotic/catkin_ws/src/dji_adelia/DroneCoordinates.txt","r")
+	camera = open("/home/robotic/catkin_ws/src/dji_adelia/CameraCoordinates.txt","r")
 	drone_coordinates = []
 	camera_coordinates = []
 	drone_lines = drone.readlines()
